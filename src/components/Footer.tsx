@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -73,10 +74,10 @@ const Footer: React.FC = () => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 >
-                  <path d="M9 12a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"></path>
-                  <path d="M15 8a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"></path>
-                  <path d="M15 20V4h-2"></path>
-                  <path d="M8 12h8"></path>
+                  <path d="M9 12a6 6 0 1 0 0 12 6 6 0 0 0 0-12z"></path>
+                  <path d="M15 8a6 6 0 0 0 9 0"></path>
+                  <path d="M15 2a6 6 0 0 0-9 0"></path>
+                  <line x1="15" y1="8" x2="15" y2="22"></line>
                 </svg>
               </a>
             </div>

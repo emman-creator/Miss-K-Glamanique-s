@@ -16,8 +16,12 @@ const GoogleMap = () => {
       
       googleMapScript.addEventListener("load", () => {
         if (window.google && mapRef.current) {
+          // Updated location to Mombasa (approximate coordinates for WMMC+374, Dedan Kimathi Ave)
+          // TypeScript fix: Define coordinates as numbers, not as functions
+          const mapCenter = { lat: -4.0435, lng: 39.6682 }; // Mombasa coordinates
+          
           const map = new window.google.maps.Map(mapRef.current, {
-            center: { lat: 40.712776, lng: -74.005974 }, // New York coordinates
+            center: mapCenter,
             zoom: 15,
             styles: [
               {
@@ -43,11 +47,12 @@ const GoogleMap = () => {
             ],
           });
           
-          // Add a marker for the store location
+          // Add a marker for the specified location
+          // TypeScript fix: Use the same mapCenter object to ensure types are consistent
           new window.google.maps.Marker({
-            position: { lat: 40.712776, lng: -74.005974 },
+            position: mapCenter,
             map: map,
-            title: "TOTE Store",
+            title: "TOTE Store - Mombasa",
           });
         }
       });

@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Carousel from "../components/Carousel";
 import ProductCard from "../components/ProductCard";
@@ -10,6 +10,7 @@ import { ArrowDown } from "lucide-react";
 
 const Index = () => {
   const navigate = useNavigate();
+  const [showAllProducts, setShowAllProducts] = useState(false);
   
   const carouselSlides = [
     {
@@ -57,7 +58,117 @@ const Index = () => {
       price: "$120",
       category: "Premium",
     },
+    // Add 4 more tote bags
+    {
+      image: "https://images.unsplash.com/photo-1532697057284-bbe526e18cdb",
+      name: "Navy Canvas Tote",
+      price: "$89",
+      category: "New Arrival",
+    },
+    {
+      image: "https://images.unsplash.com/photo-1597633125184-9fd7e54f79a1",
+      name: "Striped Beach Tote",
+      price: "$65",
+      category: "Summer",
+    },
+    {
+      image: "https://images.unsplash.com/photo-1559563458-527698bf5295",
+      name: "Organic Cotton Tote",
+      price: "$79",
+      category: "Eco-Friendly",
+    },
+    {
+      image: "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d",
+      name: "Denim Everyday Tote",
+      price: "$110",
+      category: "Bestseller",
+    },
   ];
+
+  const additionalProducts = [
+    {
+      image: "https://images.unsplash.com/photo-1555089560-5704569d6d27",
+      name: "Minimalist White Tote",
+      price: "$82",
+      category: "Casual",
+    },
+    {
+      image: "https://images.unsplash.com/photo-1574365569389-a10d488ca3fb",
+      name: "Woven Pattern Tote",
+      price: "$94",
+      category: "Artisan",
+    },
+    {
+      image: "https://images.unsplash.com/photo-1589782431321-8dee19a708b2",
+      name: "Colorblock Canvas Tote",
+      price: "$88",
+      category: "Trendy",
+    },
+    {
+      image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3",
+      name: "Weekend Travel Tote",
+      price: "$125",
+      category: "Premium",
+    },
+    {
+      image: "https://images.unsplash.com/photo-1485125639709-a60c3a500bf1",
+      name: "Bamboo Handle Tote",
+      price: "$105",
+      category: "Sustainable",
+    },
+    {
+      image: "https://images.unsplash.com/photo-1561876123-5c1673b16f62",
+      name: "Market Day Tote",
+      price: "$72",
+      category: "Practical",
+    },
+    {
+      image: "https://images.unsplash.com/photo-1604176424472-475d99365cbe",
+      name: "Office Essential Tote",
+      price: "$99",
+      category: "Work",
+    },
+    {
+      image: "https://images.unsplash.com/photo-1575844264771-892081089897",
+      name: "Student Canvas Tote",
+      price: "$68",
+      category: "Everyday",
+    },
+    {
+      image: "https://images.unsplash.com/photo-1612902376491-7a8a99b424e8",
+      name: "Structured Canvas Tote",
+      price: "$92",
+      category: "Classic",
+    },
+    {
+      image: "https://images.unsplash.com/photo-1554342872-034a06541bad",
+      name: "Botanical Print Tote",
+      price: "$86",
+      category: "Limited Edition",
+    },
+    {
+      image: "https://images.unsplash.com/photo-1536303158031-c868b371399f",
+      name: "Monochrome Tote",
+      price: "$78",
+      category: "Minimal",
+    },
+    {
+      image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e",
+      name: "Heavy Duty Canvas Tote",
+      price: "$95",
+      category: "Durable",
+    },
+  ];
+
+  const toggleShowAllProducts = () => {
+    setShowAllProducts(!showAllProducts);
+    if (!showAllProducts) {
+      setTimeout(() => {
+        const allProductsSection = document.getElementById("all-products");
+        allProductsSection?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -134,13 +245,40 @@ const Index = () => {
 
           <div className="mt-16 text-center">
             <Button
+              onClick={toggleShowAllProducts}
               className="rounded-full px-8 py-6 bg-black hover:bg-gray-800 text-white transition-all duration-300"
             >
-              View All Products
+              {showAllProducts ? "Show Featured Products" : "View All Products"}
             </Button>
           </div>
         </div>
       </section>
+
+      {/* Additional Products Section - Shows when "View All Products" is clicked */}
+      {showAllProducts && (
+        <section id="all-products" className="py-16 bg-white">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl md:text-3xl font-display font-medium mb-4">All Products</h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                Browse our complete collection of handcrafted tote bags for every occasion.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
+              {additionalProducts.map((product, index) => (
+                <ProductCard
+                  key={index}
+                  image={product.image}
+                  name={product.name}
+                  price={product.price}
+                  category={product.category}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Newsletter Section */}
       <section className="py-20 bg-gray-900 text-white">

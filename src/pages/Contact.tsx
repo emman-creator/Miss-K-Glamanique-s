@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -7,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import { Mail, MapPin, Phone } from "lucide-react";
+import GoogleMap from "../components/GoogleMap";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -245,11 +245,11 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Map Section */}
+      {/* Map Section - Updated with Google Map */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-6">
-          <div className="aspect-[16/9] w-full bg-gray-100 rounded-lg overflow-hidden">
-            <div className="w-full h-full bg-cover bg-center opacity-90" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1526367790999-0150786686a2')" }}></div>
+          <div className="aspect-[16/9] w-full bg-gray-100 rounded-lg overflow-hidden h-[400px]">
+            <GoogleMap />
           </div>
         </div>
       </section>

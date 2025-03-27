@@ -1,4 +1,3 @@
-
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -112,54 +111,64 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-16 md:py-24">
+      {/* Privacy Policy Section */}
+      <section id="privacy" className="py-16 md:py-24">
         <div className="container mx-auto px-6">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl font-display font-medium mb-6">Our Team</h2>
-            <p className="text-gray-600 text-balance">
-              Meet the passionate people behind TOTE.
-            </p>
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-display font-medium mb-6">Privacy Policy</h2>
+            <div className="prose prose-lg max-w-none">
+              <p className="text-gray-600 mb-4">
+                At TOTE, we take your privacy seriously. This Privacy Policy outlines how we collect, 
+                use, and protect your personal information when you visit our website or make a purchase.
+              </p>
+              <h3 className="text-xl font-medium mt-8 mb-4">Information We Collect</h3>
+              <p className="text-gray-600 mb-4">
+                We collect information that you provide directly to us, such as your name, email address, 
+                shipping address, and payment information when you make a purchase or contact us.
+              </p>
+              <h3 className="text-xl font-medium mt-8 mb-4">How We Use Your Information</h3>
+              <p className="text-gray-600 mb-4">
+                We use your information to process and fulfill your orders, communicate with you about 
+                your purchases, and provide customer service. We may also use your information to send 
+                you marketing communications if you have opted in to receive them.
+              </p>
+              <h3 className="text-xl font-medium mt-8 mb-4">Data Security</h3>
+              <p className="text-gray-600 mb-4">
+                We implement appropriate security measures to protect your personal information from 
+                unauthorized access, alteration, disclosure, or destruction.
+              </p>
+            </div>
           </div>
+        </div>
+      </section>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-            {[
-              {
-                name: "Emma Chen",
-                role: "Founder & Designer",
-                image: "https://images.unsplash.com/photo-1590649613897-1a9d4df9387b",
-                bio: "Emma founded TOTE in 2018 with a vision to create minimalist bags that blend form and function.",
-              },
-              {
-                name: "Marcus Reid",
-                role: "Production Lead",
-                image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
-                bio: "With over 15 years in textile manufacturing, Marcus oversees our sustainable production processes.",
-              },
-              {
-                name: "Sofia Rivera",
-                role: "Sustainability Officer",
-                image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
-                bio: "Sofia ensures our materials and practices meet the highest standards of environmental responsibility.",
-              },
-            ].map((member, index) => (
-              <div key={index} className="hover-lift">
-                <div className="aspect-square mb-6 overflow-hidden rounded-full">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                  />
-                </div>
-                <div className="text-center">
-                  <h3 className="text-xl font-display font-medium mb-1">
-                    {member.name}
-                  </h3>
-                  <p className="text-gray-500 mb-3">{member.role}</p>
-                  <p className="text-gray-600 text-balance">{member.bio}</p>
-                </div>
-              </div>
-            ))}
+      {/* Terms of Service Section */}
+      <section id="terms" className="py-16 md:py-24 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-display font-medium mb-6">Terms of Service</h2>
+            <div className="prose prose-lg max-w-none">
+              <p className="text-gray-600 mb-4">
+                By accessing and using the TOTE website, you agree to these Terms of Service.
+              </p>
+              <h3 className="text-xl font-medium mt-8 mb-4">Product Information</h3>
+              <p className="text-gray-600 mb-4">
+                We make every effort to display our products as accurately as possible. However, colors 
+                may appear differently on different screens, and slight variations in the products themselves 
+                may occur due to the handcrafted nature of our items.
+              </p>
+              <h3 className="text-xl font-medium mt-8 mb-4">Shipping and Returns</h3>
+              <p className="text-gray-600 mb-4">
+                We offer shipping within the United States and internationally to select countries. 
+                Delivery times may vary based on your location. If you are not satisfied with your purchase, 
+                you may return it within 30 days for a full refund or exchange.
+              </p>
+              <h3 className="text-xl font-medium mt-8 mb-4">Intellectual Property</h3>
+              <p className="text-gray-600 mb-4">
+                All content on this website, including text, images, logos, and designs, is the property 
+                of TOTE and is protected by copyright and other intellectual property laws.
+              </p>
+            </div>
           </div>
         </div>
       </section>

@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -40,7 +39,7 @@ const Footer: React.FC = () => {
               <a
                 href="#"
                 className="text-gray-600 hover:text-black transition-colors"
-                aria-label="Twitter"
+                aria-label="X (formerly Twitter)"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -53,13 +52,15 @@ const Footer: React.FC = () => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 >
-                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                  <path d="M4 4l11.733 16h4.267l-11.733-16z"></path>
+                  <path d="M4 20l6.768-6.768"></path>
+                  <path d="M13.277 10.723l6.723-6.723"></path>
                 </svg>
               </a>
               <a
                 href="#"
                 className="text-gray-600 hover:text-black transition-colors"
-                aria-label="Facebook"
+                aria-label="TikTok"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +73,10 @@ const Footer: React.FC = () => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 >
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                  <path d="M9 12a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"></path>
+                  <path d="M15 8a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"></path>
+                  <path d="M15 20V4h-2"></path>
+                  <path d="M8 12h8"></path>
                 </svg>
               </a>
             </div>
@@ -118,12 +122,12 @@ const Footer: React.FC = () => {
             © {new Date().getFullYear()} TOTE. All rights reserved.
           </p>
           <div className="mt-4 md:mt-0 flex space-x-6 text-sm text-gray-500">
-            <a href="#" className="hover:text-gray-900 transition-colors">
+            <Link to="/about#privacy" className="hover:text-gray-900 transition-colors">
               Privacy Policy
-            </a>
-            <a href="#" className="hover:text-gray-900 transition-colors">
+            </Link>
+            <Link to="/about#terms" className="hover:text-gray-900 transition-colors">
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </div>

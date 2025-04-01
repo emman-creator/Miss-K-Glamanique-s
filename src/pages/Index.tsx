@@ -5,6 +5,7 @@ import Carousel from "../components/Carousel";
 import ProductCard from "../components/ProductCard";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import TestimonialCarousel from "../components/TestimonialCarousel";
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
 
@@ -299,6 +300,20 @@ const Index = () => {
               Subscribe
             </Button>
           </form>
+        </div>
+      </section>
+
+      {/* Customer Testimonials Section */}
+      <section className="py-16 bg-gradient-to-b from-gray-100 to-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-6">
+            <h2 className="text-3xl md:text-4xl font-display font-medium mb-4">What Our Customers Say</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto mb-8">
+              Discover what makes our tote bags the favorite choice of customers around the world.
+            </p>
+          </div>
+          
+          <TestimonialCarousel />
         </div>
       </section>
 

@@ -1,6 +1,11 @@
 
 import React, { useEffect, useRef } from "react";
 
+interface LatLngObject {
+  lat: number;
+  lng: number;
+}
+
 const GoogleMap = () => {
   const mapRef = useRef<HTMLDivElement>(null);
 
@@ -16,12 +21,14 @@ const GoogleMap = () => {
       
       googleMapScript.addEventListener("load", () => {
         if (window.google && mapRef.current) {
-          // Updated location to Mombasa (approximate coordinates for WMMC+374, Dedan Kimathi Ave)
-          // TypeScript fix: Define coordinates as numbers, not as functions
-          const mapCenter = { lat: -4.0435, lng: 39.6682 }; // Mombasa coordinates
+          // Location for WMMC+374, Dedan Kimathi Ave, Mombasa
+          const mapCenter: LatLngObject = { 
+            lat: -4.0435, 
+            lng: 39.6682 
+          };
           
           const map = new window.google.maps.Map(mapRef.current, {
-            center: mapCenter,
+            center: mapCenter as google.maps.LatLngLiteral,
             zoom: 15,
             styles: [
               {
@@ -48,9 +55,8 @@ const GoogleMap = () => {
           });
           
           // Add a marker for the specified location
-          // TypeScript fix: Use the same mapCenter object to ensure types are consistent
           new window.google.maps.Marker({
-            position: mapCenter,
+            position: mapCenter as google.maps.LatLngLiteral,
             map: map,
             title: "TOTE Store - Mombasa",
           });

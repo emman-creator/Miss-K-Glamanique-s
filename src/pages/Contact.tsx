@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -5,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone, Twitter } from "lucide-react";
 import GoogleMap from "../components/GoogleMap";
 
 const Contact = () => {
@@ -138,7 +139,7 @@ const Contact = () => {
                 Contact Information
               </h2>
               <p className="text-gray-600 mb-8 text-balance">
-                We're based in New York, but our totes travel worldwide. Here's how you can reach us directly.
+                We're based in Mombasa, but our totes travel worldwide. Here's how you can reach us directly.
               </p>
 
               <div className="space-y-8">
@@ -159,8 +160,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-medium mb-1">Phone</h3>
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
-                    <p className="text-gray-600">Mon-Fri, 9am-5pm EST</p>
+                    <p className="text-gray-600">+254 712 345 678</p>
+                    <p className="text-gray-600">Mon-Fri, 9am-5pm EAT</p>
                   </div>
                 </div>
 
@@ -170,8 +171,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-medium mb-1">Location</h3>
-                    <p className="text-gray-600">123 Design Street</p>
-                    <p className="text-gray-600">New York, NY 10001</p>
+                    <p className="text-gray-600">WMMC+374, Dedan Kimathi Ave</p>
+                    <p className="text-gray-600">Mombasa, Kenya</p>
                   </div>
                 </div>
               </div>
@@ -205,19 +206,7 @@ const Contact = () => {
                     className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
                     aria-label="Twitter"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
-                    </svg>
+                    <Twitter className="h-5 w-5" />
                   </a>
                   <a
                     href="#"

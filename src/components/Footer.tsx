@@ -111,9 +111,9 @@ const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-2 text-gray-600">
               <li>hello@tote.design</li>
-              <li>+1 (555) 123-4567</li>
-              <li>123 Design Street</li>
-              <li>New York, NY 10001</li>
+              <li>+254 712 345 678</li>
+              <li>WMMC+374, Dedan Kimathi Ave</li>
+              <li>Mombasa, Kenya</li>
             </ul>
           </div>
         </div>

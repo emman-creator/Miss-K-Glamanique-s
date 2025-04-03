@@ -68,7 +68,6 @@ This project is built with .
 ## Acknowledgments
 - Icons from IcoFonts and Lucide React.
 - Original images were used.
-- Built with ❤️ by Jilo Igwo.
 
 ## How can I deploy this project?
 

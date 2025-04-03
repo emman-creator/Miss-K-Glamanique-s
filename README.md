@@ -1,26 +1,25 @@
-# Welcome to your Lovable project
+# Tote Bag E-Commerce Website
 
-## Project info
+This is a React-based e-commerce website for selling tote bags. The project is designed to provide a seamless shopping experience with features like a carousel, product listings, contact information, and responsive navigation.
 
-**URL**: https://lovable.dev/projects/df0be93c-f1ac-4fd1-beb5-844ad4660ac9
+## Features
 
-## How can I edit this code?
+- **Home Page**: Showcases featured products and a carousel for promotions.
+- **About Page**: Provides information about the brand and its mission.
+- **Contact Page**: Includes a contact form and social media links (Instagram and TikTok).
+- **Responsive Design**: Fully responsive for desktop and mobile devices.
+- **Dynamic Navigation**: Highlights the current page in the navigation bar.
+- **Reusable Components**: Modular components like `Header`, `Footer`, `Carousel`, and `ProductCard`.
 
-There are several ways of editing your application.
+## Technologies Used
 
-**Use Lovable**
+- **Frontend**: React, TypeScript
+- **Routing**: React Router
+- **Styling**: Tailwind CSS
+- **Icons**: Lucide React, IcoFonts
+- **Build Tool**: Vite
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/df0be93c-f1ac-4fd1-beb5-844ad4660ac9) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+## Project Structure
 
 ```sh
 # Step 1: Clone the repository using the project's Git URL.
@@ -59,6 +58,17 @@ This project is built with .
 - React
 - shadcn-ui
 - Tailwind CSS
+
+## Social Media Links
+- Instagram: @missk.glamaniques
+- TikTok: @missk.glamaniques
+## License
+- This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Acknowledgments
+- Icons from IcoFonts and Lucide React.
+- Original images were used.
+- Built with ❤️ by Jilo Igwo.
 
 ## How can I deploy this project?
 

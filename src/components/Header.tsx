@@ -30,12 +30,15 @@ const Header: React.FC = () => {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <Link
-          to="/"
-          className="text-2xl font-display font-medium tracking-tight transition-opacity hover:opacity-80"
-        >
-          TOTE
-        </Link>
+        <div className="flex items-center space-x-3">
+          <Link to="/">
+            <img
+              src="/public/image/logonow.png"
+              alt="Logo"
+              className="h-20 w-25 object-contain"
+            />
+          </Link>
+        </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">

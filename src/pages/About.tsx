@@ -23,7 +23,7 @@ const About = () => {
               Our Story
             </h1>
             <p className="text-gray-600 text-lg md:text-xl leading-relaxed mb-8 text-balance">
-              Crafting sustainable, minimalist tote bags since 2018.
+              Crafting sustainable, minimalist tote bags since 2024.
             </p>
           </div>
         </div>
@@ -36,12 +36,12 @@ const About = () => {
             <div className="order-2 md:order-1 animate-slide-from-left">
               <h2 className="text-3xl font-display font-medium mb-6">Our Mission</h2>
               <p className="text-gray-600 mb-4 text-balance">
-                At TOTE, our mission is to create beautiful, functional bags that stand the test of time. 
+                At Miss K. Glamanique's, our mission is to sell beautiful, functional bags that stand the test of time. 
                 We believe in thoughtful design, sustainable practices, and products that become more 
                 beautiful with age.
               </p>
               <p className="text-gray-600 mb-6 text-balance">
-                Every tote we craft is a reflection of our core values: simplicity, sustainability, and quality craftsmanship. 
+                Every tote we sell is a reflection of our core values: simplicity, sustainability, and quality craftsmanship. 
                 We're committed to reducing waste in the fashion industry by creating products that last for years, not seasons.
               </p>
               <Button
@@ -54,7 +54,7 @@ const About = () => {
             <div className="order-1 md:order-2 animate-slide-from-right">
               <div className="relative h-[400px] md:h-[500px] overflow-hidden rounded-lg">
                 <img
-                  src="https://images.unsplash.com/photo-1583394838336-acd977736f90"
+                  src="/public/image/carouselbag1.jpg"
                   alt="Craftsman working on a tote bag"
                   className="w-full h-full object-cover hover-scale"
                 />
@@ -65,50 +65,54 @@ const About = () => {
       </section>
 
       {/* Values Section */}
-      <section className="py-16 md:py-24 bg-gray-50">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-white to-gray-50">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl font-display font-medium mb-6">Our Values</h2>
-            <p className="text-gray-600 text-balance">
-              The principles that guide everything we do, from design to production.
+            <h2 className="text-4xl font-display font-semibold mb-6 text-gray-800">
+              Our Core Values
+            </h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              The foundation of everything we do, from concept to creation.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {[
               {
                 title: "Sustainability",
                 description:
-                  "We use organic cotton, recycled materials, and natural dyes to minimize our environmental footprint.",
-                image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09",
+                  "We prioritize eco-friendly materials like organic cotton, recycled fabrics, and natural dyes to reduce our environmental impact.",
+                image: "/public/image/sustainable.webp",
               },
               {
                 title: "Craftsmanship",
                 description:
-                  "Every bag is meticulously crafted by skilled artisans who take pride in their attention to detail.",
+                  "Our bags are handcrafted by skilled artisans, ensuring exceptional quality and attention to detail in every piece.",
                 image: "https://images.unsplash.com/photo-1556760544-74068565f05c",
               },
               {
                 title: "Timeless Design",
                 description:
-                  "We create minimalist designs that transcend trends, ensuring your tote remains stylish for years to come.",
-                image: "https://images.unsplash.com/photo-1491637639811-60e2756cc1c7",
+                  "We create minimalist, versatile designs that remain stylish and functional for years to come.",
+                image: "/public/image/timeless.jpg",
               },
             ].map((value, index) => (
-              <div key={index} className="flex flex-col hover-lift">
-                <div className="aspect-square mb-6 overflow-hidden rounded-lg">
+              <div
+                key={index}
+                className="group flex flex-col items-center text-center transition-transform duration-300 hover:scale-105"
+              >
+                <div className="relative w-full aspect-square mb-6 overflow-hidden rounded-lg shadow-lg">
                   <img
                     src={value.image}
                     alt={value.title}
-                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
+                  <div className="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
-                <h3 className="text-xl font-display font-medium mb-3">
+                <h3 className="text-2xl font-display font-semibold mb-3 text-gray-800">
                   {value.title}
                 </h3>
-                <p className="text-gray-600 text-balance">
-                  {value.description}
-                </p>
+                <p className="text-gray-600 leading-relaxed">{value.description}</p>
               </div>
             ))}
           </div>
@@ -140,13 +144,13 @@ const About = () => {
                     <div className="flex gap-6 items-start mb-4">
                       <div className="w-1/3 overflow-hidden rounded-lg shake-on-hover">
                         <img 
-                          src="https://images.unsplash.com/photo-1458668383970-8ddd3927deed"
+                          src="/public/image/privacy.png"
                           alt="Privacy Shield" 
                           className="w-full h-32 object-cover"
                         />
                       </div>
                       <div className="w-2/3 prose prose-sm">
-                        <p>At TOTE, we take your privacy seriously. We collect only essential information needed to process your orders and provide customer service.</p>
+                        <p>At Miss K. Glamanique's, we take your privacy seriously. We collect only essential information needed to process your orders and provide customer service.</p>
                         <HoverCard>
                           <HoverCardTrigger asChild>
                             <span className="text-blue-600 cursor-pointer hover:underline">Learn more about data protection</span>
@@ -162,7 +166,7 @@ const About = () => {
                     </div>
                   </CardContent>
                   <CardFooter className="border-t pt-4 flex justify-between items-center">
-                    <span className="text-xs text-gray-500">Last updated: June 2023</span>
+                    <span className="text-xs text-gray-500">Last updated: January 2025</span>
                     <Button 
                       variant="ghost" 
                       size="sm"
@@ -192,7 +196,7 @@ const About = () => {
                     <div className="flex gap-6 items-start mb-4">
                       <div className="w-1/3 overflow-hidden rounded-lg shake-on-hover">
                         <img 
-                          src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21"
+                          src="/public/image/service.jpg"
                           alt="Terms Document" 
                           className="w-full h-32 object-cover"
                         />
@@ -206,7 +210,7 @@ const About = () => {
                           <HoverCardContent className="w-80">
                             <div className="space-y-2">
                               <h4 className="text-sm font-semibold">Hassle-free returns</h4>
-                              <p className="text-sm">If you're not satisfied with your purchase, you may return it within 30 days for a full refund or exchange.</p>
+                              <p className="text-sm">If you're not satisfied with your purchase, you may return it within 20 days for a full refund or exchange.</p>
                             </div>
                           </HoverCardContent>
                         </HoverCard>
@@ -214,7 +218,7 @@ const About = () => {
                     </div>
                   </CardContent>
                   <CardFooter className="border-t pt-4 flex justify-between items-center">
-                    <span className="text-xs text-gray-500">Last updated: June 2023</span>
+                    <span className="text-xs text-gray-500">Last updated: January 2025</span>
                     <Button 
                       variant="ghost" 
                       size="sm"
@@ -237,7 +241,7 @@ const About = () => {
             <h2 className="text-3xl font-display font-medium mb-6">Privacy Policy</h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-gray-600 mb-4">
-                At TOTE, we take your privacy seriously. This Privacy Policy outlines how we collect, 
+                At Miss K. Glamanique's, we take your privacy seriously. This Privacy Policy outlines how we collect, 
                 use, and protect your personal information when you visit our website or make a purchase.
               </p>
               <h3 className="text-xl font-medium mt-8 mb-4">Information We Collect</h3>
@@ -268,7 +272,7 @@ const About = () => {
             <h2 className="text-3xl font-display font-medium mb-6">Terms of Service</h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-gray-600 mb-4">
-                By accessing and using the TOTE website, you agree to these Terms of Service.
+                By accessing and using the Miss K. Glamanique's website, you agree to these Terms of Service.
               </p>
               <h3 className="text-xl font-medium mt-8 mb-4">Product Information</h3>
               <p className="text-gray-600 mb-4">
@@ -278,14 +282,14 @@ const About = () => {
               </p>
               <h3 className="text-xl font-medium mt-8 mb-4">Shipping and Returns</h3>
               <p className="text-gray-600 mb-4">
-                We offer shipping within the United States and internationally to select countries. 
+                We offer delivery within Kenya and internationally to select countries. 
                 Delivery times may vary based on your location. If you are not satisfied with your purchase, 
                 you may return it within 30 days for a full refund or exchange.
               </p>
               <h3 className="text-xl font-medium mt-8 mb-4">Intellectual Property</h3>
               <p className="text-gray-600 mb-4">
                 All content on this website, including text, images, logos, and designs, is the property 
-                of TOTE and is protected by copyright and other intellectual property laws.
+                of Miss K. Glamanique's and is protected by copyright and other intellectual property laws.
               </p>
             </div>
           </div>

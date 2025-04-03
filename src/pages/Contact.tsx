@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -82,7 +81,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     className="w-full rounded-md"
-                    placeholder="John Doe"
+                    placeholder="Jeanette Karuku"
                   />
                 </div>
 
@@ -139,7 +138,7 @@ const Contact = () => {
                 Contact Information
               </h2>
               <p className="text-gray-600 mb-8 text-balance">
-                We're based in Mombasa, but our totes travel worldwide. Here's how you can reach us directly.
+                We're based in Mombasa, but our totes travel countrywide. Here's how you can reach us directly.
               </p>
 
               <div className="space-y-8">
@@ -149,8 +148,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-medium mb-1">Email</h3>
-                    <p className="text-gray-600">hello@tote.design</p>
-                    <p className="text-gray-600">support@tote.design</p>
+                    <p className="text-gray-600">jeanettekaruku13@gmail.com</p>
                   </div>
                 </div>
 
@@ -181,7 +179,7 @@ const Contact = () => {
                 <h3 className="text-lg font-medium mb-4">Follow Us</h3>
                 <div className="flex space-x-4">
                   <a
-                    href="#"
+                    href="https://www.instagram.com/missk._glamaniques_?utm_source=qr&igsh=MTF6cDE5dTliYmNleg=="
                     className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
                     aria-label="Instagram"
                   >
@@ -200,18 +198,11 @@ const Contact = () => {
                       <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                       <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                     </svg>
-                  </a>
+                  </a>     
                   <a
-                    href="#"
+                    href="https://www.tiktok.com/@_missk.glamaniques_?_t=ZM-8uNiloXrolb&_r=1"
                     className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
-                    aria-label="Twitter"
-                  >
-                    <Twitter className="h-5 w-5" />
-                  </a>
-                  <a
-                    href="#"
-                    className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
-                    aria-label="Facebook"
+                    aria-label="TikTok"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -224,8 +215,8 @@ const Contact = () => {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     >
-                      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                    </svg>
+                    <path d="M9 3v12a4 4 0 1 1-2-3.465V8.5a6 6 0 1 0 6 6V3h-4z"></path>                   
+                     </svg>
                   </a>
                 </div>
               </div>

@@ -1,5 +1,4 @@
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Carousel from "../components/Carousel";
 import ProductCard from "../components/ProductCard";
@@ -12,10 +11,11 @@ import { ArrowDown } from "lucide-react";
 const Index = () => {
   const navigate = useNavigate();
   const [showAllProducts, setShowAllProducts] = useState(false);
-  
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   const carouselSlides = [
     {
-      image: "https://images.unsplash.com/photo-1525562723836-dca67a71d5f1",
+      image: "/public/image/carouselbag2.jpg",
       alt: "Minimal tote bag",
       heading: "Elegance in Simplicity",
       subheading: "Featured Collection",
@@ -27,7 +27,7 @@ const Index = () => {
       subheading: "New Arrivals",
     },
     {
-      image: "https://images.unsplash.com/photo-1557899563-1940fc95709c",
+      image: "/public/image/carouselbag1.jpg",
       alt: "Sustainable tote bag",
       heading: "Sustainable Style",
       subheading: "Eco-Friendly Materials",
@@ -36,130 +36,139 @@ const Index = () => {
 
   const featuredProducts = [
     {
-      image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7",
+      image: "/public/image/bag1.jpg",
       name: "Classic Canvas Tote",
-      price: "$85",
+      price: "Ksh 350",
       category: "Bestseller",
     },
     {
-      image: "https://images.unsplash.com/photo-1589365252845-092198ba5979",
+      image: "/public/image/bag2.jpg",
       name: "Minimal Black Tote",
-      price: "$95",
+      price: "Ksh 350",
       category: "New",
     },
     {
-      image: "https://images.unsplash.com/photo-1491637639811-60e2756cc1c7",
-      name: "Eco-Friendly Jute Tote",
-      price: "$75",
+      image: "/public/image/bag3.jpg",
+      name: "Eco-Friendly Tote",
+      price: "Ksh 350",
       category: "Sustainable",
     },
     {
-      image: "https://images.unsplash.com/photo-1544816155-12df9643f363",
+      image: "/public/image/bag4.jpg",
       name: "Premium Leather Handle Tote",
-      price: "$120",
+      price: "Ksh 350",
       category: "Premium",
     },
     // Add 4 more tote bags
     {
-      image: "https://images.unsplash.com/photo-1532697057284-bbe526e18cdb",
+      image: "/public/image/bag5.jpg",
       name: "Navy Canvas Tote",
-      price: "$89",
+      price: "Ksh 350",
       category: "New Arrival",
     },
     {
-      image: "https://images.unsplash.com/photo-1597633125184-9fd7e54f79a1",
+      image: "/public/image/bag6.jpg",
       name: "Striped Beach Tote",
-      price: "$65",
+      price: "Ksh 350",
       category: "Summer",
     },
     {
-      image: "https://images.unsplash.com/photo-1559563458-527698bf5295",
+      image: "/public/image/bag7.jpg",
       name: "Organic Cotton Tote",
-      price: "$79",
+      price: "Ksh 350",
       category: "Eco-Friendly",
     },
     {
-      image: "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d",
-      name: "Denim Everyday Tote",
-      price: "$110",
+      image: "/public/image/bag8.jpg",
+      name: "Everyday Tote",
+      price: "Ksh 350",
       category: "Bestseller",
     },
   ];
 
   const additionalProducts = [
     {
-      image: "https://images.unsplash.com/photo-1555089560-5704569d6d27",
+      image: "/public/image/bag9.jpg",
       name: "Minimalist White Tote",
-      price: "$82",
+      price: "Ksh 350",
       category: "Casual",
     },
     {
-      image: "https://images.unsplash.com/photo-1574365569389-a10d488ca3fb",
+      image: "/public/image/bag10.jpg",
       name: "Woven Pattern Tote",
-      price: "$94",
+      price: "Ksh 350",
       category: "Artisan",
     },
     {
-      image: "https://images.unsplash.com/photo-1589782431321-8dee19a708b2",
+      image: "/public/image/bag11.jpg",
       name: "Colorblock Canvas Tote",
-      price: "$88",
+      price: "Ksh 350",
       category: "Trendy",
     },
     {
-      image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3",
+      image: "/public/image/bag12.jpg",
       name: "Weekend Travel Tote",
-      price: "$125",
+      price: "Ksh 350",
       category: "Premium",
     },
     {
-      image: "https://images.unsplash.com/photo-1485125639709-a60c3a500bf1",
-      name: "Bamboo Handle Tote",
-      price: "$105",
+      image: "/public/image/bag13.jpg",
+      name: "Bamboo Tote",
+      price: "Ksh 350",
       category: "Sustainable",
     },
     {
-      image: "https://images.unsplash.com/photo-1561876123-5c1673b16f62",
+      image: "/public/image/bag14.jpg",
       name: "Market Day Tote",
-      price: "$72",
+      price: "Ksh 350",
       category: "Practical",
     },
     {
-      image: "https://images.unsplash.com/photo-1604176424472-475d99365cbe",
+      image: "/public/image/bag15.jpg",
       name: "Office Essential Tote",
-      price: "$99",
+      price: "Ksh 350",
       category: "Work",
     },
     {
-      image: "https://images.unsplash.com/photo-1575844264771-892081089897",
+      image: "/public/image/bag16.jpg",
       name: "Student Canvas Tote",
-      price: "$68",
+      price: "Ksh 350",
       category: "Everyday",
     },
     {
-      image: "https://images.unsplash.com/photo-1612902376491-7a8a99b424e8",
-      name: "Structured Canvas Tote",
-      price: "$92",
+      image: "/public/image/bag17.jpg",
+      name: "Heavy Structured Canvas Tote",
+      price: "Ksh 450",
       category: "Classic",
     },
     {
-      image: "https://images.unsplash.com/photo-1554342872-034a06541bad",
-      name: "Botanical Print Tote",
-      price: "$86",
+      image: "/public/image/bag18.jpg",
+      name: "Heavy Botanical Print Tote",
+      price: "Ksh 450",
       category: "Limited Edition",
     },
     {
-      image: "https://images.unsplash.com/photo-1536303158031-c868b371399f",
-      name: "Monochrome Tote",
-      price: "$78",
+      image: "/public/image/bag19.jpg",
+      name: "Heavy Monochrome Tote",
+      price: "Ksh 450",
       category: "Minimal",
     },
     {
-      image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e",
+      image: "/public/image/bag20.jpg",
       name: "Heavy Duty Canvas Tote",
-      price: "$95",
+      price: "Ksh 450",
       category: "Durable",
     },
   ];
+
+  // Automatically change slides every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % carouselSlides.length);
+    }, 3000);
+
+    return () => clearInterval(interval); // Cleanup interval on component unmount
+  }, [carouselSlides.length]);
 
   const toggleShowAllProducts = () => {
     setShowAllProducts(!showAllProducts);
@@ -199,7 +208,7 @@ const Index = () => {
             Crafted with Care, <br className="hidden sm:block" />Designed for Living
           </h2>
           <p className="text-gray-600 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto text-balance animate-slide-in">
-            At TOTE, we believe in the beauty of simplicity. Our handcrafted bags combine
+            At Miss K. Glamanique's, we believe in the beauty of simplicity. Our bags combine
             minimalist design with sustainable materials to create timeless accessories for everyday use.
           </p>
           <div className="flex justify-center gap-4">
@@ -228,7 +237,7 @@ const Index = () => {
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-display font-medium mb-4">Featured Products</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Explore our collection of carefully crafted tote bags, designed with attention to detail and quality materials.
+              Explore our collection of tote bags, available for purchase and designed with attention to detail and quality materials.
             </p>
           </div>
 
@@ -261,9 +270,9 @@ const Index = () => {
           <div className="container mx-auto px-6">
             <div className="text-center mb-12">
               <h2 className="text-2xl md:text-3xl font-display font-medium mb-4">All Products</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                Browse our complete collection of handcrafted tote bags for every occasion.
-              </p>
+                <p className="text-gray-600 max-w-2xl mx-auto animate-fade-in">
+                Browse our complete collection of tote bags for every occasion, crafted with love and care.
+                </p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">

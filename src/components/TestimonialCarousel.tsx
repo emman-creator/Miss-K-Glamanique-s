@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -43,32 +42,31 @@ const Testimonial: React.FC<TestimonialProps> = ({ content, author, role, avatar
 const TestimonialCarousel: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [isPaused, setIsPaused] = useState(false);
 
   const testimonials = [
     {
-      content: "My TOTE bag has been with me for years. The quality is outstanding, and it still looks as good as new despite daily use. Highly recommend!",
-      author: "Sarah Johnson",
+      content: "My tote bag has been with me for years. The quality is outstanding, and it still looks as good as new despite daily use. Highly recommend!",
+      author: "Angie Juma",
       role: "Designer",
-      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+      // avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
     },
     {
       content: "I absolutely love the minimalist design. Perfect for work, shopping, and everything in between. The sustainable materials make me feel good about my purchase.",
-      author: "Michael Chen",
-      role: "Architect",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
+      author: "Spice Nyambura",
+      role: "Content Creator",
+      // avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
     },
     {
       content: "After trying countless totes, I've finally found my perfect bag. The craftsmanship is exceptional, and the classic design goes with everything.",
-      author: "Emma Rodriguez",
+      author: "Dida Doshi",
       role: "Photographer",
       avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80",
     },
     {
-      content: "The premium leather handles on my TOTE bag make all the difference. It's both functional and stylish - I get compliments everywhere I go.",
-      author: "David Thompson",
-      role: "Marketing Director",
-      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+      content: "The premium leather handles on my tote bag make all the difference. It's both functional and stylish - I get compliments everywhere I go.",
+      author: "Nas Karuku",
+      role: "Student",
+      // avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
     },
   ];
 
@@ -91,18 +89,12 @@ const TestimonialCarousel: React.FC = () => {
   };
 
   useEffect(() => {
-    if (isPaused) return;
-
     const interval = setInterval(nextSlide, 6000);
     return () => clearInterval(interval);
-  }, [currentIndex, isPaused]);
+  }, [currentIndex]);
 
   return (
-    <div 
-      className="relative pt-12 pb-16 px-4 overflow-hidden"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-    >
+    <div className="relative pt-12 pb-16 px-4 overflow-hidden">
       <div className="relative max-w-5xl mx-auto">
         <div className="overflow-hidden">
           <div

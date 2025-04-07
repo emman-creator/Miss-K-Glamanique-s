@@ -229,7 +229,11 @@ const Contact = () => {
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-6">
           <div className="aspect-[16/9] w-full bg-gray-100 rounded-lg overflow-hidden h-[400px]">
-            <GoogleMap />
+            <GoogleMap 
+              apiKey="AIzaSyBZxGvvD1Y-zT0II9s0OUlPkfQlCUqkqZs"
+              center={{ lat: -4.0435, lng: 39.6682 }} 
+              zoom={15}
+            />
           </div>
         </div>
       </section>

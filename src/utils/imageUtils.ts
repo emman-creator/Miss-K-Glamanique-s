@@ -5,6 +5,11 @@
  * @returns The normalized image path for proper rendering
  */
 export const normalizePath = (imagePath: string): string => {
+  // If it's an empty string or undefined, return a placeholder
+  if (!imagePath) {
+    return '/placeholder.svg';
+  }
+  
   // If it's an external URL (starts with http), return as is
   if (imagePath.startsWith('http')) {
     return imagePath;
@@ -15,8 +20,8 @@ export const normalizePath = (imagePath: string): string => {
     return imagePath.replace('/public/', '/');
   }
   
-  // If it starts with / but not /public, return as is
-  if (imagePath.startsWith('/')) {
+  // If it already has a correct leading slash, return as is
+  if (imagePath.startsWith('/') && !imagePath.startsWith('/public/')) {
     return imagePath;
   }
   
@@ -46,8 +51,32 @@ export const validateImagePath = (imagePath: string): boolean => {
   
   // Image paths should be well-formed
   const isWellFormed = normalizedPath.includes('/image/') || 
-                       normalizedPath.includes('/images/') || 
-                       normalizedPath.includes('/assets/');
+                      normalizedPath.includes('/images/') || 
+                      normalizedPath.includes('/assets/') ||
+                      // Allow direct paths from public root
+                      /^\/[^/]+\.(jpg|jpeg|png|gif|svg|webp)$/i.test(normalizedPath);
   
-  return hasExtension && isWellFormed;
+  return hasExtension || isWellFormed;
+};
+
+/**
+ * Gets the file extension from a path
+ * 
+ * @param path - The file path
+ * @returns The file extension (without the dot)
+ */
+export const getFileExtension = (path: string): string => {
+  const match = path.match(/\.([^.]+)$/);
+  return match ? match[1].toLowerCase() : '';
+};
+
+/**
+ * Checks if a path is an image
+ * 
+ * @param path - The file path
+ * @returns true if the path has an image extension
+ */
+export const isImagePath = (path: string): boolean => {
+  const extension = getFileExtension(path);
+  return ['jpg', 'jpeg', 'png', 'gif', 'svg', 'webp'].includes(extension);
 };

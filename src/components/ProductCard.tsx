@@ -1,5 +1,6 @@
 
 import React from "react";
+import { normalizePath } from "../utils/imageUtils";
 
 interface ProductCardProps {
   image: string;
@@ -14,12 +15,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
   price,
   category,
 }) => {
-  // Ensure images are properly referenced whether they're from public or external URLs
-  const imageUrl = image.startsWith("http") 
-    ? image 
-    : image.startsWith("/public") 
-      ? image.replace("/public", "") 
-      : image;
+  // Use the normalizePath utility to properly format image paths
+  const imageUrl = normalizePath(image);
 
   return (
     <div className="group">

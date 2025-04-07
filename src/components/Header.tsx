@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import { normalizePath } from "../utils/imageUtils";
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -33,7 +34,7 @@ const Header: React.FC = () => {
         <div className="flex items-center space-x-3">
           <Link to="/">
             <img
-              src="/public/image/logonow.png"
+              src={normalizePath("/image/logonow.png")}
               alt="Logo"
               className="h-20 w-25 object-contain"
             />

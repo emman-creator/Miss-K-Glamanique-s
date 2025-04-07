@@ -1,6 +1,6 @@
-
 import React, { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { normalizePath } from "../utils/imageUtils";
 
 interface CarouselProps {
   slides: {
@@ -53,31 +53,34 @@ const Carousel: React.FC<CarouselProps> = ({
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {slides.map((slide, index) => (
-        <div
-          key={index}
-          className={`absolute inset-0 transition-opacity duration-500 ease-in-out bg-cover bg-center ${
-            index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
-          }`}
-          style={{ backgroundImage: `url(${slide.image})` }}
-        >
-          <div className="absolute inset-0 bg-black/25"></div>
-          <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-6">
-            <div className={`max-w-3xl transition-all duration-700 ${
-              index === currentSlide ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}>
-              <p className="text-white/80 uppercase tracking-widest text-sm md:text-base mb-4 font-medium">
-                {slide.subheading}
-              </p>
-              <h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-display font-medium mb-6 leading-tight">
-                {slide.heading}
-              </h2>
+      {slides.map((slide, index) => {
+        const normalizedImagePath = normalizePath(slide.image);
+        
+        return (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-500 ease-in-out bg-cover bg-center ${
+              index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
+            }`}
+            style={{ backgroundImage: `url(${normalizedImagePath})` }}
+          >
+            <div className="absolute inset-0 bg-black/25"></div>
+            <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-6">
+              <div className={`max-w-3xl transition-all duration-700 ${
+                index === currentSlide ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}>
+                <p className="text-white/80 uppercase tracking-widest text-sm md:text-base mb-4 font-medium">
+                  {slide.subheading}
+                </p>
+                <h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-display font-medium mb-6 leading-tight">
+                  {slide.heading}
+                </h2>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
 
-      {/* Navigation arrows */}
       <button
         onClick={goToPrevSlide}
         className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-all duration-200"
@@ -93,7 +96,6 @@ const Carousel: React.FC<CarouselProps> = ({
         <ChevronRight className="h-6 w-6" />
       </button>
 
-      {/* Indicators */}
       <div className="absolute bottom-6 left-0 right-0 z-20 flex justify-center space-x-2">
         {slides.map((_, index) => (
           <button

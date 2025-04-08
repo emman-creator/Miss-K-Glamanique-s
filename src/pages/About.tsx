@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { Shield, FileText } from "lucide-react";
+import { normalizePath } from "../utils/imageUtils";
 
 const About = () => {
   const navigate = useNavigate();
@@ -54,7 +55,7 @@ const About = () => {
             <div className="order-1 md:order-2 animate-slide-from-right">
               <div className="relative h-[400px] md:h-[500px] overflow-hidden rounded-lg">
                 <img
-                  src="/public/image/carouselbag1.jpg"
+                  src={normalizePath("/image/carouselbag1.jpg")}
                   alt="Craftsman working on a tote bag"
                   className="w-full h-full object-cover hover-scale"
                 />
@@ -82,7 +83,7 @@ const About = () => {
                 title: "Sustainability",
                 description:
                   "We prioritize eco-friendly materials like organic cotton, recycled fabrics, and natural dyes to reduce our environmental impact.",
-                image: "/public/image/sustainable.webp",
+                image: normalizePath("/image/sustainable.webp"),
               },
               {
                 title: "Craftsmanship",
@@ -94,7 +95,7 @@ const About = () => {
                 title: "Timeless Design",
                 description:
                   "We create minimalist, versatile designs that remain stylish and functional for years to come.",
-                image: "/public/image/timeless.jpg",
+                image: normalizePath("/image/timeless.jpg"),
               },
             ].map((value, index) => (
               <div
@@ -144,7 +145,7 @@ const About = () => {
                     <div className="flex gap-6 items-start mb-4">
                       <div className="w-1/3 overflow-hidden rounded-lg shake-on-hover">
                         <img 
-                          src="/public/image/privacy.png"
+                          src={normalizePath("/image/privacy.png")}
                           alt="Privacy Shield" 
                           className="w-full h-32 object-cover"
                         />
@@ -196,7 +197,7 @@ const About = () => {
                     <div className="flex gap-6 items-start mb-4">
                       <div className="w-1/3 overflow-hidden rounded-lg shake-on-hover">
                         <img 
-                          src="/public/image/service.jpg"
+                          src={normalizePath("/image/service.jpg")}
                           alt="Terms Document" 
                           className="w-full h-32 object-cover"
                         />

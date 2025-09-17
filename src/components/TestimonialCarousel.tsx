@@ -52,6 +52,12 @@ const TestimonialCarousel: React.FC = () => {
       // avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
     },
     {
+      content: "My tote bag has been with me for years. The quality is outstanding, and it still looks as good as new despite daily use. Highly recommend!",
+      author: "Emmanuel Nzai",
+      role: "Developer",
+      // avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+    },
+    {
       content: "I absolutely love the minimalist design. Perfect for work, shopping, and everything in between. The sustainable materials make me feel good about my purchase.",
       author: "Spice Nyambura",
       role: "Content Creator",

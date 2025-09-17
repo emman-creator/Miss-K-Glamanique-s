@@ -95,7 +95,7 @@ const About = () => {
                 title: "Timeless Design",
                 description:
                   "We create minimalist, versatile designs that remain stylish and functional for years to come.",
-                image: normalizePath("/image/timeless.jpg"),
+                image: normalizePath("/image/tree.jpg"),
               },
             ].map((value, index) => (
               <div
